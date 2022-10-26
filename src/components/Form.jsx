@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Form.css';
 
 class Form extends Component {
   render() {
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+      // hasTrunfo,
+      isSaveButtonDisabled,
+      onInputChange,
+      onSaveButtonClick,
+    } = this.props;
+
     return (
       <form>
         <div className="input">
@@ -13,7 +29,8 @@ class Form extends Component {
               id="name-input"
               type="text"
               placeholder="Insira o nome da carta"
-              onChange={ this.handleChange }
+              value={ cardName }
+              onChange={ onInputChange }
             />
           </label>
         </div>
@@ -24,7 +41,8 @@ class Form extends Component {
               data-testid="description-input"
               id="description-input"
               placeholder="Insira a descrição da carta"
-              onChange={ this.handleChange }
+              value={ cardDescription }
+              onChange={ onInputChange }
             />
           </label>
         </div>
@@ -36,7 +54,8 @@ class Form extends Component {
               id="attr1-input"
               type="number"
               placeholder="Atributo 1"
-              onChange={ this.handleChange }
+              value={ cardAttr1 }
+              onChange={ onInputChange }
             />
           </label>
         </div>
@@ -48,7 +67,8 @@ class Form extends Component {
               id="attr1-input"
               type="number"
               placeholder="Atributo 2"
-              onChange={ this.handleChange }
+              value={ cardAttr2 }
+              onChange={ onInputChange }
             />
           </label>
         </div>
@@ -60,7 +80,8 @@ class Form extends Component {
               id="attr3-input"
               type="number"
               placeholder="Atributo 3"
-              onChange={ this.handleChange }
+              value={ cardAttr3 }
+              onChange={ onInputChange }
             />
           </label>
         </div>
@@ -72,7 +93,8 @@ class Form extends Component {
               id="image-input"
               type="text"
               placeholder="Insira o link da imagem"
-              onChange={ this.handleChange }
+              value={ cardImage }
+              onChange={ onInputChange }
             />
           </label>
         </div>
@@ -82,7 +104,8 @@ class Form extends Component {
             <select
               data-testid="rare-input"
               id="rare-input"
-              onChange={ this.handleChange }
+              value={ cardRare }
+              onChange={ onInputChange }
             >
               <option>normal</option>
               <option>raro</option>
@@ -97,7 +120,8 @@ class Form extends Component {
               type="checkbox"
               id="trunfo-input"
               className="checkbox"
-              onChange={ this.handleChange }
+              checked={ cardTrunfo }
+              onChange={ onInputChange }
             />
             <p className="checkbox">Super Trunfo</p>
           </label>
@@ -106,6 +130,8 @@ class Form extends Component {
           <button
             type="button"
             data-testid="save-button"
+            disabled={ isSaveButtonDisabled }
+            onClick={ onSaveButtonClick }
           >
             Salvar
           </button>
@@ -114,5 +140,20 @@ class Form extends Component {
     );
   }
 }
+
+Form.propTypes = {
+  cardName: PropTypes.string,
+  cardDescription: PropTypes.string,
+  cardAttr1: PropTypes.number,
+  cardAttr2: PropTypes.number,
+  cardAttr3: PropTypes.number,
+  cardImage: PropTypes.string,
+  cardRare: PropTypes.string,
+  cardTrunfo: PropTypes.bool,
+  // hasTrunfo: PropTypes.string,
+  isSaveButtonDisabled: PropTypes.string,
+  onInputChange: PropTypes.func,
+  onSaveButtonClick: PropTypes.func,
+}.isRequired;
 
 export default Form;
