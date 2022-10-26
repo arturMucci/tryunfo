@@ -1,11 +1,19 @@
 import React from 'react';
+import Form from './components/Form';
 
 class App extends React.Component {
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     name- input: '',
+  //   }
+  // }
+
   render() {
     return (
-      // Abrindo PR
       <div>
         <h1>Tryunfo</h1>
+        <Form />
       </div>
     );
   }
