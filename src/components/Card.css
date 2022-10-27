@@ -1,6 +1,6 @@
 #card {
-  display: flex;
   align-items: flex-start;
+  display: flex;
   border-radius: 10px;
   flex-direction: column;
   height: fit-content;
@@ -8,7 +8,7 @@
 }
 
 #card img {
-  width: 300px;
-  margin: 10px;
   border-radius: 10px;
+  margin: 10px;
+  width: 300px;
 }
