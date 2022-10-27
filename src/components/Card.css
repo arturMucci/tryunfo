@@ -1,0 +1,14 @@
+#card {
+  display: flex;
+  align-items: flex-start;
+  border-radius: 10px;
+  flex-direction: column;
+  height: fit-content;
+  width: fit-content;
+}
+
+#card img {
+  width: 300px;
+  margin: 10px;
+  border-radius: 10px;
+}

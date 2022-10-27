@@ -6,11 +6,11 @@ class Form extends Component {
   render() {
     const {
       cardName,
+      cardImage,
       cardDescription,
       cardAttr1,
       cardAttr2,
       cardAttr3,
-      cardImage,
       cardRare,
       cardTrunfo,
       // hasTrunfo,
@@ -22,11 +22,12 @@ class Form extends Component {
     return (
       <form>
         <div className="input">
-          <label htmlFor="name-input">
+          <label htmlFor="name">
             <p>Nome </p>
             <input
               data-testid="name-input"
-              id="name-input"
+              name="cardName"
+              id="name"
               type="text"
               placeholder="Insira o nome da carta"
               value={ cardName }
@@ -35,75 +36,81 @@ class Form extends Component {
           </label>
         </div>
         <div className="input">
-          <label htmlFor="description-input">
+          <label htmlFor="image">
+            <p>Imagem </p>
+            <input
+              data-testid="image-input"
+              name="cardImage"
+              id="image"
+              type="text"
+              value={ cardImage }
+              placeholder="Insira o link da imagem"
+              onChange={ onInputChange }
+            />
+          </label>
+        </div>
+        <div className="input">
+          <label htmlFor="description">
             <p>Descrição </p>
             <textarea
               data-testid="description-input"
-              id="description-input"
-              placeholder="Insira a descrição da carta"
+              name="cardDescription"
+              id="description"
+              placeholder="Insira a descrição do Animal"
               value={ cardDescription }
               onChange={ onInputChange }
             />
           </label>
         </div>
         <div className="input">
-          <label htmlFor="attr1-input">
-            <p>Atributo 1 </p>
+          <label htmlFor="attr1">
+            <p>Força</p>
             <input
               data-testid="attr1-input"
-              id="attr1-input"
+              name="cardAttr1"
+              id="cardAttr1"
               type="number"
-              placeholder="Atributo 1"
+              placeholder="Força"
               value={ cardAttr1 }
               onChange={ onInputChange }
             />
           </label>
         </div>
         <div className="input">
-          <label htmlFor="attr2-input">
-            <p>Atributo 2 </p>
+          <label htmlFor="attr2">
+            <p>Agilidade</p>
             <input
               data-testid="attr2-input"
-              id="attr1-input"
+              name="cardAttr2"
+              id="cardAttr2"
               type="number"
-              placeholder="Atributo 2"
+              placeholder="Agilidade"
               value={ cardAttr2 }
               onChange={ onInputChange }
             />
           </label>
         </div>
         <div className="input">
-          <label htmlFor="attr3-input">
-            <p>Atributo 3 </p>
+          <label htmlFor="attr3">
+            <p>Inteligência</p>
             <input
               data-testid="attr3-input"
-              id="attr3-input"
+              name="cardAttr3"
+              id="cardAttr3"
               type="number"
-              placeholder="Atributo 3"
+              placeholder="Inteligência"
               value={ cardAttr3 }
               onChange={ onInputChange }
             />
           </label>
         </div>
         <div className="input">
-          <label htmlFor="image-input">
-            <p>Imagem </p>
-            <input
-              data-testid="image-input"
-              id="image-input"
-              type="text"
-              placeholder="Insira o link da imagem"
-              value={ cardImage }
-              onChange={ onInputChange }
-            />
-          </label>
-        </div>
-        <div className="input">
-          <label htmlFor="rare-input">
+          <label htmlFor="rare">
             <p>Raridade </p>
             <select
               data-testid="rare-input"
-              id="rare-input"
+              name="cardRare"
+              id="rare"
               value={ cardRare }
               onChange={ onInputChange }
             >
@@ -114,11 +121,12 @@ class Form extends Component {
           </label>
         </div>
         <div className="input">
-          <label htmlFor="trunfo-input">
+          <label htmlFor="trunfo">
             <input
               data-testid="trunfo-input"
+              name="cardTrunfo"
+              id="trunfo"
               type="checkbox"
-              id="trunfo-input"
               className="checkbox"
               checked={ cardTrunfo }
               onChange={ onInputChange }
@@ -130,6 +138,7 @@ class Form extends Component {
           <button
             type="button"
             data-testid="save-button"
+            // name="cardName"
             disabled={ isSaveButtonDisabled }
             onClick={ onSaveButtonClick }
           >
@@ -150,7 +159,7 @@ Form.propTypes = {
   cardImage: PropTypes.string,
   cardRare: PropTypes.string,
   cardTrunfo: PropTypes.bool,
-  // hasTrunfo: PropTypes.string,
+  hasTrunfo: PropTypes.bool,
   isSaveButtonDisabled: PropTypes.string,
   onInputChange: PropTypes.func,
   onSaveButtonClick: PropTypes.func,

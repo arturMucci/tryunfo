@@ -1,0 +1,14 @@
+#formContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+}
+
+#preview {
+  display: flex;
+  flex-direction: column;
+}
