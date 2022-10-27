@@ -17,8 +17,42 @@ class App extends React.Component {
       cardTrunfo: false,
       // hasTrunfo: false,
       isSaveButtonDisabled: true,
+      deck: [],
     };
   }
+
+  onSaveButtonClick = () => {
+    const {
+      cardName,
+      cardImage,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardRare,
+      cardTrunfo,
+    } = this.state;
+    const obj = {
+      cardName,
+      cardImage,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardRare,
+      cardTrunfo,
+    };
+    this.setState((prev) => ({
+      deck: [...prev.deck, obj],
+      cardName: '',
+      cardImage: '',
+      cardDescription: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardRare: 'normal',
+    }));
+  };
 
   checkState = () => {
     const noventa = 90;
@@ -90,7 +124,7 @@ class App extends React.Component {
             cardRare={ cardRare }
             cardTrunfo={ cardTrunfo }
             onInputChange={ this.onInputChange }
-            onSaveButtonClick={ this.onInputChange }
+            onSaveButtonClick={ this.onSaveButtonClick }
             isSaveButtonDisabled={ isSaveButtonDisabled }
           />
         </div>
