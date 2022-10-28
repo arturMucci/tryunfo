@@ -1,14 +1,52 @@
 .card {
-  align-items: flex-start;
+  background-color: gold;
+  border: 1px solid none;
   border-radius: 10px;
   display: flex;
-  flex-direction: column;
   height: fit-content;
-  width: fit-content;
+  justify-content: center;
+  padding: 10px;
+  width: 370px;
 }
 
-.card img {
+.name-card {
+  height: 1em;
+  margin-bottom: 8px;
+}
+
+.imagem {
   border-radius: 10px;
-  margin: 10px;
-  width: 300px;
+  display: flex;
+  height: 350px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.description {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 5em;
+  margin-bottom: 10px;
+  width: 22em;
+  word-break: break-word;
+}
+
+.superTrunfo {
+  height: 1.5em;
+}
+
+.atributos {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  height: 1em;
+  margin-bottom: 5px;
 }

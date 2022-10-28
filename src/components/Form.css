@@ -1,9 +1,21 @@
+form {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
 button {
   width: fit-content;
 }
 
-label p {
+label {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 10px;
+}
+
+.descriptionInput {
+  height: 4em;
 }
 
 .checkbox {
@@ -13,4 +25,5 @@ label p {
 
 .input {
   margin-bottom: 15px;
+  width: 500px;
 }

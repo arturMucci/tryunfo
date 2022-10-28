@@ -56,8 +56,9 @@ class Form extends Component {
             <textarea
               data-testid="description-input"
               name="cardDescription"
-              id="description"
+              className="descriptionInput"
               placeholder="Insira a descrição do Animal"
+              maxLength="166"
               value={ cardDescription }
               onChange={ onInputChange }
             />
