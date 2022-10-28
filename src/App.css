@@ -1,3 +1,7 @@
+#lista {
+  text-align: center;
+}
+
 #formContainer {
   display: flex;
   justify-content: space-around;

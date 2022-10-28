@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import List from './components/List';
 import './App.css';
 
 class App extends React.Component {
@@ -120,38 +121,44 @@ class App extends React.Component {
       hasTrunfo,
       cardTrunfo,
       isSaveButtonDisabled,
+      deck,
     } = this.state;
 
     return (
-      <div id="formContainer">
-        <div>
-          <Form
-            cardName={ cardName }
-            cardImage={ cardImage }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            cardRare={ cardRare }
-            cardTrunfo={ cardTrunfo }
-            hasTrunfo={ hasTrunfo }
-            onInputChange={ this.onInputChange }
-            onSaveButtonClick={ this.onSaveButtonClick }
-            isSaveButtonDisabled={ isSaveButtonDisabled }
-          />
+      <div id="appContainer">
+        <div id="formContainer">
+          <div>
+            <Form
+              cardName={ cardName }
+              cardImage={ cardImage }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+              hasTrunfo={ hasTrunfo }
+              onInputChange={ this.onInputChange }
+              onSaveButtonClick={ this.onSaveButtonClick }
+              isSaveButtonDisabled={ isSaveButtonDisabled }
+            />
+          </div>
+          <div id="preview">
+            <h2>Card preview</h2>
+            <Card
+              cardName={ cardName }
+              cardImage={ cardImage }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+            />
+          </div>
         </div>
-        <div id="preview">
-          <h2>Card preview</h2>
-          <Card
-            cardName={ cardName }
-            cardImage={ cardImage }
-            cardDescription={ cardDescription }
-            cardAttr1={ cardAttr1 }
-            cardAttr2={ cardAttr2 }
-            cardAttr3={ cardAttr3 }
-            cardRare={ cardRare }
-            cardTrunfo={ cardTrunfo }
-          />
+        <div id="lista">
+          <List deck={ deck } />
         </div>
       </div>
     );
