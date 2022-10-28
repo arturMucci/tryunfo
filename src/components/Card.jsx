@@ -15,6 +15,7 @@ class Card extends Component {
       cardTrunfo,
     } = this.props;
 
+    const notTrunfo = <p data-testid="trunfo-card"> </p>;
     const superTrunfo = <p data-testid="trunfo-card">Super Trunfo</p>;
 
     return (
@@ -41,7 +42,7 @@ class Card extends Component {
           <p data-testid="rare-card">
             {cardRare}
           </p>
-          {cardTrunfo ? superTrunfo : ''}
+          {cardTrunfo ? superTrunfo : notTrunfo}
         </div>
       </div>
     );
@@ -57,7 +58,6 @@ Card.propTypes = {
   cardAttr3: PropTypes.string,
   cardRare: PropTypes.string,
   cardTrunfo: PropTypes.bool,
-  // hasTrunfo: PropTypes.bool.isRequired,
 }.isRequired;
 
 export default Card;

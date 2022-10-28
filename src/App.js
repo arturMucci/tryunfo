@@ -15,11 +15,21 @@ class App extends React.Component {
       cardAttr3: '0',
       cardRare: 'normal',
       cardTrunfo: false,
-      // hasTrunfo: false,
+      hasTrunfo: false,
       isSaveButtonDisabled: true,
       deck: [],
     };
   }
+
+  checkTrunfo = () => {
+    const { cardTrunfo } = this.state;
+    if (cardTrunfo === true) {
+      this.setState({
+        hasTrunfo: true,
+        cardTrunfo: false,
+      });
+    }
+  };
 
   onSaveButtonClick = () => {
     const {
@@ -51,7 +61,7 @@ class App extends React.Component {
       cardAttr2: '0',
       cardAttr3: '0',
       cardRare: 'normal',
-    }));
+    }), this.checkTrunfo());
   };
 
   checkState = () => {
@@ -91,6 +101,7 @@ class App extends React.Component {
 
   onInputChange = ({ target }) => {
     const { name } = target;
+    if (name === 'cardTrunfo') this.checkTrunfo();
     const check = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
       [name]: check,
@@ -106,8 +117,8 @@ class App extends React.Component {
       cardAttr2,
       cardAttr3,
       cardRare,
+      hasTrunfo,
       cardTrunfo,
-      // hasTrunfo,
       isSaveButtonDisabled,
     } = this.state;
 
@@ -123,6 +134,7 @@ class App extends React.Component {
             cardAttr3={ cardAttr3 }
             cardRare={ cardRare }
             cardTrunfo={ cardTrunfo }
+            hasTrunfo={ hasTrunfo }
             onInputChange={ this.onInputChange }
             onSaveButtonClick={ this.onSaveButtonClick }
             isSaveButtonDisabled={ isSaveButtonDisabled }
