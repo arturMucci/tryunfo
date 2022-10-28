@@ -1,18 +1,18 @@
-#lista {
+.lista {
   text-align: center;
 }
 
-#formContainer {
+.formContainer {
   display: flex;
   justify-content: space-around;
 }
 
-#form {
+.form {
   display: flex;
   flex-direction: column;
 }
 
-#preview {
+.preview {
   display: flex;
   flex-direction: column;
 }

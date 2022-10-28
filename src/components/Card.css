@@ -1,13 +1,13 @@
-#card {
+.card {
   align-items: flex-start;
-  display: flex;
   border-radius: 10px;
+  display: flex;
   flex-direction: column;
   height: fit-content;
   width: fit-content;
 }
 
-#card img {
+.card img {
   border-radius: 10px;
   margin: 10px;
   width: 300px;

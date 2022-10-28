@@ -19,7 +19,7 @@ class Card extends Component {
     const superTrunfo = <p data-testid="trunfo-card">Super Trunfo</p>;
 
     return (
-      <div id="card">
+      <div className="card">
         <div>
           <h2 data-testid="name-card">{cardName}</h2>
           <img

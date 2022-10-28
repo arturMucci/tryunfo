@@ -125,8 +125,8 @@ class App extends React.Component {
     } = this.state;
 
     return (
-      <div id="appContainer">
-        <div id="formContainer">
+      <div className="appContainer">
+        <div className="formContainer">
           <div>
             <Form
               cardName={ cardName }
@@ -143,7 +143,7 @@ class App extends React.Component {
               isSaveButtonDisabled={ isSaveButtonDisabled }
             />
           </div>
-          <div id="preview">
+          <div className="preview">
             <h2>Card preview</h2>
             <Card
               cardName={ cardName }
@@ -157,7 +157,7 @@ class App extends React.Component {
             />
           </div>
         </div>
-        <div id="lista">
+        <div className="lista">
           <List deck={ deck } />
         </div>
       </div>
