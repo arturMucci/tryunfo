@@ -15,7 +15,7 @@ class Card extends Component {
       cardTrunfo,
     } = this.props;
 
-    const notTrunfo = <p data-testid="trunfo-card"> </p>;
+    const notTrunfo = '';
     const superTrunfo = <p data-testid="trunfo-card">Super Trunfo</p>;
 
     return (
